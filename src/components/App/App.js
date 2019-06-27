@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PlayerSetup from '../playerSetup/playerSetup';
 import './App.css';
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <PlayerSetup></PlayerSetup>
         <button onClick={this.increment}>+</button>
         <div>{ this.props.count }</div>
         <button onClick={this.decrement}>-</button>
