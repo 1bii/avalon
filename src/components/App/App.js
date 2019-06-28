@@ -24,6 +24,6 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({count}) => ({count});
+const mapStateToProps = (state) => ({count: state.characters.count});
 
 export default connect(mapStateToProps)(App);

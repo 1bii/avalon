@@ -2,16 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducer from './reducers/characters'
+import reducer from './reducers/index';
 import './index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducer);
-store.dispatch({ type: "INCREMENT" });
-store.dispatch({ type: "INCREMENT" });
-store.dispatch({ type: "DECREMENT" });
-store.dispatch({ type: "RESET" });
 
 ReactDOM.render(
     <Provider store={store}>

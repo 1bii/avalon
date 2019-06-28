@@ -1,23 +1,19 @@
 const initialState = {
-    count: 0
+    playerList: []
 }
 
 const reducer = (state = initialState, action) => {
+    // console.log(state, action);
     switch (action.type) {
-        case 'INCREMENT':
+        case 'ADD_PLAYER':
             return {
                 ...state,
-                count: state.count + 1
+                playerList: [...state.playerList, action.player]
             };
-        case 'DECREMENT':
+        case 'DELETE_PLAYER':
             return {
                 ...state,
-                count: state.count - 1
-            };
-        case 'RESET':
-            return {
-                ...state,
-                count: 0
+                playerList: state.playerList.slice(action.index, 1)
             };
         default:
             return state; 

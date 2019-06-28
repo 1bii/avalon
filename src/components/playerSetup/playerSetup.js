@@ -3,23 +3,43 @@ import { connect } from 'react-redux';
 import './playerSetup.css';
 
 class PlayerSetup extends React.Component {
-    playerList = [
-        'Amy',
-        'Bob',
-        'Christel'
-    ];
 
-    createTable = () => {
-        return this.playerList.map(name => <div>{name}</div>);
+    input;
+
+    renderPlayerList = () => {
+        console.log(this.props.playerList);
+        return this.props.playerList.map((name, i) => <div key={i}>{name}</div>);
+    }
+
+    addPlayer = (name) => {
+        this.props.dispatch({type: 'ADD_PLAYER', player: name});
+    }
+
+    changeMaster = () => {
+        this.props.dispatch({type: 'CHANGE_MASTER', master: 'fuck'});
+    }
+
+    handleSubmit = (event) => {
+        this.addPlayer(this.input);
+        event.preventDefault();
+        this.forceUpdate();
     }
     
     render() {
         return (
             <div>
-                {this.createTable()}
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" onChange={event => this.input = event.target.value} />
+                    <button type="submit">Add player</button>
+                </form>
+                <div>{() => this.renderPlayerList()}</div>
             </div>
         );
     }
 }
 
-export default PlayerSetup;
+const mapStateToProps = (state) => {
+    return state.players;
+};
+
+export default connect(mapStateToProps)(PlayerSetup);
