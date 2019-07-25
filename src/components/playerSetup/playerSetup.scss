@@ -1,0 +1,24 @@
+@import '../../scss/common.scss';
+
+.player-setup {
+    margin-top: 20px;
+    .title {
+        margin-bottom: 10px;
+    }
+    
+    .name-item {
+        margin-top: 5px;
+        &:first-child {
+            margin-top: 10px;
+        }
+    }
+    
+    .btn {
+        &.add-player {
+            margin-left: 10px;
+        }
+        &.start-game {
+            margin-top: 10px;
+        }
+    }
+}

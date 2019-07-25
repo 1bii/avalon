@@ -1,0 +1,16 @@
+@import '../../scss/common.scss';
+
+.App {
+  @include display-flex;
+  @include flex-direction(column);
+  text-align: center;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 20px;
+  padding: 40px;
+  .app-title {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 4px solid;
+  }
+}
