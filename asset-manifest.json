@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/avalon/static/css/main.4e15400b.chunk.css",
-    "main.js": "/avalon/static/js/main.3d5d77f4.chunk.js",
-    "main.js.map": "/avalon/static/js/main.3d5d77f4.chunk.js.map",
+    "main.css": "/avalon/static/css/main.cb09c376.chunk.css",
+    "main.js": "/avalon/static/js/main.1269398b.chunk.js",
+    "main.js.map": "/avalon/static/js/main.1269398b.chunk.js.map",
     "runtime~main.js": "/avalon/static/js/runtime~main.b7d50eed.js",
     "runtime~main.js.map": "/avalon/static/js/runtime~main.b7d50eed.js.map",
     "static/js/2.4b15869d.chunk.js": "/avalon/static/js/2.4b15869d.chunk.js",
     "static/js/2.4b15869d.chunk.js.map": "/avalon/static/js/2.4b15869d.chunk.js.map",
     "index.html": "/avalon/index.html",
-    "precache-manifest.e88d28900c35641ec049e8456dab14a7.js": "/avalon/precache-manifest.e88d28900c35641ec049e8456dab14a7.js",
+    "precache-manifest.7f3c63f135c23ec992f4f5c4c9cda5ed.js": "/avalon/precache-manifest.7f3c63f135c23ec992f4f5c4c9cda5ed.js",
     "service-worker.js": "/avalon/service-worker.js",
-    "static/css/main.4e15400b.chunk.css.map": "/avalon/static/css/main.4e15400b.chunk.css.map",
+    "static/css/main.cb09c376.chunk.css.map": "/avalon/static/css/main.cb09c376.chunk.css.map",
     "static/media/index.css": "/avalon/static/media/parchment.bc061578.jpg"
   }
 }
