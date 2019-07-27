@@ -59,7 +59,7 @@ class CharacterSetup extends React.Component {
                 <div className="final-button-section">
                     <button className="btn clear" onClick={this.backToHome}>Home</button>
                     <button className="btn clear" onClick={this.resetCharacter}>Reset</button>
-                    <button className="btn common">Start</button>
+                    <button className="btn common" disabled={this.props.playerList.length > this.props.selectedCount}>Start</button>
                 </div>
             </div>
         );

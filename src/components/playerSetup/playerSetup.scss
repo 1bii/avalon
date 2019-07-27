@@ -13,7 +13,7 @@
         @include display-flex;
         @include flex-direction(column);
         @include align-items(flex-start);
-        width: 300px;
+        width: 100%;
         padding-left: 50px;
         .name-item {
             margin-top: 5px;
