@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/avalon/precache-manifest.b2c4161efaeed5695ca93677497e9de2.js"
+  "/avalon/precache-manifest.8bd874768f22bc419916c6fd6b8376a1.js"
 );
 
 self.addEventListener('message', (event) => {
