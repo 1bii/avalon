@@ -15,7 +15,6 @@
                 @include display-flex;
                 @include align-items(center);
                 @include justify-content(space-between);
-                width: 110px;
                 .btn {
                     height: 30px;
                     width: 36px;
@@ -23,6 +22,7 @@
                     color: white;
                     background-color: $color-brown;
                     font-size: 24px;
+                    line-height: 24px;
                     &.plus {
                         border-radius: 0 15px 15px 0;
                         text-align: left
@@ -31,6 +31,10 @@
                         border-radius: 15px 0 0 15px;
                         text-align: right
                     }
+                }
+                .count {
+                    width: 38px;
+                    text-align: center;
                 }
             }
         }

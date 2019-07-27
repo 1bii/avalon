@@ -31,7 +31,7 @@ class CharacterSetup extends React.Component {
     render() {
         return (
             <div className="character-setup">
-                <div className="character-list">{Object.keys(this.props.characterList).map((name, i) => {
+                <div className="character-list">{Object.keys(this.props.characterList).sort().map((name, i) => {
                     let displayName = name.toUpperCase();
                     return (
                         <div className="character-line" key={i}>
