@@ -26,7 +26,10 @@ class PlayerSetup extends React.Component {
     }
 
     startGame = () => {
-        this.props.dispatch({type: pageActions.change, page: pageMap.characters})
+        this.props.dispatch({type: pageActions.change, page: pageMap.characters});
+    }
+    clearPlayers = () => {
+        this.props.dispatch({type: playerActions.clear});
     }
     
     render() {
@@ -40,9 +43,15 @@ class PlayerSetup extends React.Component {
                 <div className="name-section">{this.props.playerList.map(({name}, i) => 
                     <div className="name-item" key={i}>{`${i+1}. ${name}`}</div>
                 )}</div>
-                { this.props.playerList.length >= 5 && 
-                    <button className="btn common start-game" onClick={this.startGame}>Let's Go</button>
-                }
+                <div className="button-section">
+                    { this.props.playerList.length > 0 && 
+                        <button className="btn clear" onClick={this.clearPlayers}>Clear</button>
+                    }
+                    { this.props.playerList.length >= 5 && 
+                        <button className="btn common start-game" onClick={this.startGame}>Let's Go</button>
+                    }
+                </div>
+                
                 { this.props.playerList.length < 5 && 
                     <div className="warning">You need at least five players</div>
                 }

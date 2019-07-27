@@ -10,6 +10,11 @@
             margin: 10px 0 15px;
             .character-name {
                 width: 100px;
+                font-weight: bold;
+                color: $color-blue;
+                &.evil {
+                    color: $color-red;
+                }
             }
             .control-section {
                 @include display-flex;
@@ -36,6 +41,18 @@
                     width: 38px;
                     text-align: center;
                 }
+            }
+        }
+    }
+    .message-to-user {
+        font-size: 13px;
+        .message-line {
+            @include display-flex;
+            i {
+                margin-right: 4px;
+            }
+            &.all-set {
+                color: $color-green;
             }
         }
     }

@@ -23,6 +23,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 playerList: state.playerList.slice(action.index, 1)
             };
+        case actions.clear:
+            return {
+                ...state,
+                playerList: []
+            };
         default:
             return state; 
     }

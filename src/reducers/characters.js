@@ -4,35 +4,43 @@ const initialState = {
     characterList: {
         merlin: {
             maxCount: 1,
-            count: 0
+            count: 0,
+            order: 0
         },
         percival: {
             maxCount: 1,
-            count: 0
+            count: 0,
+            order: 1
         },
         servant: {
             maxCount: 5,
-            count: 0
+            count: 0,
+            order: 2
         },
         mordred: {
             maxCount: 1,
-            count: 0
+            count: 0,
+            order: 3
         },
         morgana: {
             maxCount: 1,
-            count: 0
+            count: 0,
+            order: 4
         },
         assassin: {
             maxCount: 1,
-            count: 0
+            count: 0,
+            order: 5
         },
         oberon: {
             maxCount: 1,
-            count: 0
+            count: 0,
+            order: 6
         },
         minion: {
             maxCount: 3,
-            count: 0
+            count: 0,
+            order: 7
         }
     },
     selectedCount: 0

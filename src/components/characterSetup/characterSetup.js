@@ -1,16 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 import './characterSetup.scss';
 import { pageMap } from '../../service/page-service';
 import characterActions from '../../actions/characters';
 import pageActions from '../../actions/page';
 
 class CharacterSetup extends React.Component {
-    constructor() {
-        super();
-        this.characterCount = 0;
-    }
-
     increaseCharacter = (name) => {
         this.props.dispatch({type: characterActions.increment, characterName: name});
     }
@@ -28,14 +24,21 @@ class CharacterSetup extends React.Component {
         this.props.dispatch({type: pageActions.change, page: pageMap.playerSetup});
     }
 
+    isGoodEvilBalanced = () => {
+        return (Object.keys(this.props.characterList).filter(name => this.props.characterList[name].order > 2 && this.props.characterList[name].count > 0).length > 0)
+        && (Object.keys(this.props.characterList).filter(name => this.props.characterList[name].order <= 2 && this.props.characterList[name].count > 0).length > 0);
+    }
+
     render() {
         return (
             <div className="character-setup">
-                <div className="character-list">{Object.keys(this.props.characterList).sort().map((name, i) => {
+                <div className="character-list">{Object.keys(this.props.characterList)
+                    .sort((a, b) => this.props.characterList[a].order - this.props.characterList[b].order)
+                    .map((name, i) => {
                     let displayName = name.toUpperCase();
                     return (
                         <div className="character-line" key={i}>
-                            <div className="character-name">{displayName}</div>
+                            <div className={classNames("character-name", {'evil': this.props.characterList[name].order > 2})}>{displayName}</div>
                             <div className="control-section">
                                 <button className="btn common minus"
                                 disabled={this.props.characterList[name].count <= 0}
@@ -50,12 +53,26 @@ class CharacterSetup extends React.Component {
                         </div>
                     );
                 })}</div>
-                { this.props.playerList.length - this.props.selectedCount > 0 &&
-                    <div className="warning">{`${this.props.playerList.length - this.props.selectedCount} left to be added`}</div>
-                }
-                { this.props.playerList.length === this.props.selectedCount &&
-                    <div>All set</div>
-                }
+                <div className="message-to-user">
+                    { this.props.playerList.length - this.props.selectedCount > 0 &&
+                        <div className="message-line warning">
+                            <i className="far fa-hand-point-right"></i>
+                            <div>{`${this.props.playerList.length - this.props.selectedCount} left to be added`}</div>
+                        </div>
+                    }
+                    { !this.isGoodEvilBalanced() &&
+                        <div className="message-line warning">
+                            <i className="far fa-hand-point-right"></i>
+                            <div>Must have at least 1 player in each team</div>
+                        </div>
+                    }
+                    { this.props.playerList.length === this.props.selectedCount && this.isGoodEvilBalanced() &&
+                        <div className="message-line all-set">
+                            <i className="fas fa-check"></i>
+                            <div>All set</div>
+                        </div>
+                    }
+                </div>
                 <div className="final-button-section">
                     <button className="btn clear" onClick={this.backToHome}>Home</button>
                     <button className="btn clear" onClick={this.resetCharacter}>Reset</button>
