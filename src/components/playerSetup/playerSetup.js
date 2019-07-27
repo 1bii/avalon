@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './playerSetup.scss';
 import { pageMap } from '../../service/page-service';
+import playerActions from '../../actions/players';
+import pageActions from '../../actions/page';
 
 class PlayerSetup extends React.Component {
     constructor() {
@@ -17,14 +19,14 @@ class PlayerSetup extends React.Component {
 
     addPlayer = (event) => {
         if (this.input && this.input.current && this.input.current.value !== '') {
-            this.props.dispatch({type: 'ADD_PLAYER', player: this.input.current.value});
+            this.props.dispatch({type: playerActions.add, player: this.input.current.value});
             this.input.current.value = '';
         }
         event.preventDefault();
     }
 
     startGame = () => {
-        this.props.dispatch({type: 'CHANGE_PAGE', page: pageMap.characters})
+        this.props.dispatch({type: pageActions.change, page: pageMap.characters})
     }
     
     render() {
@@ -33,10 +35,17 @@ class PlayerSetup extends React.Component {
                 <div className="title">Please add players</div>
                 <div>
                     <input type="text" ref={this.input} onKeyDown={this.handleInputEnter}/>
-                    <button className="btn add-player" onClick={this.addPlayer}>Add player</button>
+                    <button className="btn common add-player" onClick={this.addPlayer}>Add player</button>
                 </div>
-                <div className="name-section">{this.props.playerList.map((name, i) => <div className="name-item" key={i}>{name}</div>)}</div>
-                <button className="btn start-game" onClick={this.startGame}>Let's Go</button>
+                <div className="name-section">{this.props.playerList.map(({name}, i) => 
+                    <div className="name-item" key={i}>{`${i+1}. ${name}`}</div>
+                )}</div>
+                { this.props.playerList.length >= 5 && 
+                    <button className="btn common start-game" onClick={this.startGame}>Let's Go</button>
+                }
+                { this.props.playerList.length < 5 && 
+                    <div className="warning">You need at least five players</div>
+                }
             </div>
         );
     }

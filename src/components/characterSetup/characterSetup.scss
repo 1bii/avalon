@@ -1,0 +1,51 @@
+@import '../../scss/common.scss';
+
+.character-setup {
+    width: 100%;
+    .character-list {
+        .character-line {
+            @include display-flex;
+            @include justify-content(space-between);
+            @include align-items(center);
+            margin: 10px 0 15px;
+            .character-name {
+                width: 100px;
+            }
+            .control-section {
+                @include display-flex;
+                @include align-items(center);
+                @include justify-content(space-between);
+                width: 110px;
+                .btn {
+                    height: 30px;
+                    width: 36px;
+                    border: 2px solid white;
+                    color: white;
+                    background-color: $color-brown;
+                    font-size: 24px;
+                    &.plus {
+                        border-radius: 0 15px 15px 0;
+                        text-align: left
+                    }
+                    &.minus {
+                        border-radius: 15px 0 0 15px;
+                        text-align: right
+                    }
+                }
+            }
+        }
+    }
+    .final-button-section {
+        @include display-flex;
+        @include justify-content(space-between);
+        margin-top: 10px;
+        .btn {
+            &.clear {
+                width: 25%;
+            }
+            &.common {
+                width: 45%;
+            }
+        }
+    }
+}

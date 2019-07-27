@@ -4,26 +4,49 @@
 // mixins
 @import './mixin.scss';
 
+// variable
+@import './variable.scss';
+
 // shared css
 .title {
   font-family: 'Great Vibes', 'Stalemate', cursive;
 }
 
+.warning {
+  color: $color-warning;
+  font-weight: bold;
+}
+
 .btn {
-  height: 36px;
-  padding: 0 16px;
-  border-radius: 22px;
-  border: none;
   font-family: 'MedievalSharp', cursive;
   font-size: 16px;
+  font-weight: 600;
+  height: 36px;
+  border-radius: 22px;
+  &.common {
+    background-color: $color-brown;
+    border: 2px solid white;
+    color: white;
+  }
+  &.clear {
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+  }
   &:hover {
     cursor: pointer;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
   }
 }
 
 input {
-  height: 16px;
-  padding: 10px; // total height: 10*2 + 16 = 36px
+  width: 130px;
+  height: 36px;
+  padding: 0 15px;
   border-radius: 22px;
   border: none;
+  font-size: 16px;
 }

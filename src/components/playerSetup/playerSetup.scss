@@ -1,24 +1,39 @@
 @import '../../scss/common.scss';
 
 .player-setup {
-    margin-top: 20px;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
     .title {
         margin-bottom: 10px;
+        font-size: 30px;
     }
     
-    .name-item {
-        margin-top: 5px;
-        &:first-child {
-            margin-top: 10px;
+    .name-section {
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(flex-start);
+        width: 300px;
+        padding-left: 50px;
+        .name-item {
+            margin-top: 5px;
+            &:first-child {
+                margin-top: 10px;
+            }
         }
     }
     
     .btn {
+        padding: 0 16px;
         &.add-player {
             margin-left: 10px;
         }
         &.start-game {
             margin-top: 10px;
         }
+    }
+
+    .warning {
+        margin: 10px 0;
     }
 }

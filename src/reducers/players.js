@@ -1,15 +1,24 @@
+import actions from '../actions/players';
+
 const initialState = {
-    playerList: []
+    // playerList: []
+    playerList: [
+        {name: 'Alice', good: null},
+        {name: 'Bob', good: null},
+        {name: 'Cathy', good: null},
+        {name: 'Dickson', good: null},
+        {name: 'Evelyn', good: null},
+    ]
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_PLAYER':
+        case actions.add:
             return {
                 ...state,
-                playerList: [...state.playerList, action.player]
+                playerList: [...state.playerList, {name: action.player, good: null}]
             };
-        case 'DELETE_PLAYER':
+        case actions.delete:
             return {
                 ...state,
                 playerList: state.playerList.slice(action.index, 1)
