@@ -5,6 +5,7 @@ import './characterSetup.scss';
 import { pageMap } from '../../service/page-service';
 import characterActions from '../../actions/characters';
 import pageActions from '../../actions/page';
+import playerActions from '../../actions/players';
 
 class CharacterSetup extends React.Component {
     increaseCharacter = (name) => {
@@ -19,9 +20,12 @@ class CharacterSetup extends React.Component {
         this.props.dispatch({type: characterActions.reset});
     }
 
-    backToHome = () => {
-        this.resetCharacter();
-        this.props.dispatch({type: pageActions.change, page: pageMap.playerSetup});
+    startGame = async () => {
+        await this.props.dispatch({type: characterActions.shuffle});
+        console.log(this.props.assignableList);
+        await this.props.dispatch({type: playerActions.setRole, assignableList: this.props.assignableList});
+        console.log(this.props.playerList);
+        this.props.dispatch({type: pageActions.change, page: pageMap.assignCharacters});
     }
 
     isGoodEvilBalanced = () => {
@@ -74,9 +78,8 @@ class CharacterSetup extends React.Component {
                     }
                 </div>
                 <div className="final-button-section">
-                    <button className="btn clear" onClick={this.backToHome}>Home</button>
                     <button className="btn clear" onClick={this.resetCharacter}>Reset</button>
-                    <button className="btn common" disabled={this.props.playerList.length > this.props.selectedCount}>Start</button>
+                    <button className="btn common" onClick={this.startGame} disabled={this.props.playerList.length > this.props.selectedCount}>Start</button>
                 </div>
             </div>
         );
@@ -88,7 +91,7 @@ const mapStateToProps = (state) => {
         playerList: state.players.playerList,
         characterList: state.characters.characterList,
         selectedCount: state.characters.selectedCount,
-        page: state.page.current
+        assignableList: state.characters.assignableList
     }
 };
 

@@ -3,11 +3,11 @@ import actions from '../actions/players';
 const initialState = {
     // playerList: []
     playerList: [
-        {name: 'Alice', good: null},
-        {name: 'Bob', good: null},
-        {name: 'Cathy', good: null},
-        {name: 'Dickson', good: null},
-        {name: 'Evelyn', good: null},
+        {name: 'Alice', role: null},
+        {name: 'Bob', role: null},
+        {name: 'Cathy', role: null},
+        {name: 'Dickson', role: null},
+        {name: 'Evelyn', role: null},
     ]
 }
 
@@ -28,6 +28,14 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 playerList: []
             };
+        case actions.setRole:
+            return {
+                ...state,
+                playerList: state.playerList.map((player, i) => ({
+                    ...player,
+                    role: action.assignableList[i]
+                }))
+            }
         default:
             return state; 
     }

@@ -62,8 +62,7 @@ class PlayerSetup extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        playerList: state.players.playerList,
-        page: state.page.current
+        playerList: state.players.playerList
     }
 };
 

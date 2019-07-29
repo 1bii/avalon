@@ -1,0 +1,64 @@
+@import '../../scss/common.scss';
+
+.assign-characters {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    text-align: center;
+    .player-name {
+        margin-bottom: 20px;
+        font-size: 40px;
+        line-height: 40px;
+        font-family: $gothic;
+        font-weight: bold;
+    }
+    .interaction-block {
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(center);
+        button {
+            width: 150px;
+            margin: 5px 0;
+        }
+        &.preview-role {
+            .message {
+                margin-bottom: 20px;
+            }
+        }
+        &.viewing {
+            .message {
+                margin-bottom: 5px;
+            }
+            .extra-info {
+                margin: 5px 0;
+            }
+            .role {
+                margin: 15px 0;
+                font-size: 40px;
+                color: $color-blue;
+                &.evil {
+                    color: $color-red;
+                }
+            }
+            .name-list {
+                margin: 5px 0;
+                font-size: 30px;
+                font-family: $gothic;
+                font-weight: bold;
+            }
+        }
+        .warning {
+            @include display-flex;
+            @include align-items(center);
+            margin: 5px 0;
+            .fa-hand-point-right {
+                margin-right: 10px;
+            }
+        }
+    }
+    img {
+        width: 80%;
+        margin-bottom: 10px;
+        border-radius: 16px;
+    }
+}

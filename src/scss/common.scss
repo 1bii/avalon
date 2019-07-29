@@ -1,6 +1,8 @@
 // fonts
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Stalemate|MedievalSharp&display=swap');
-
+$medieval: 'MedievalSharp', 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+$gothic: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+$greatvibes: 'Great Vibes', 'Stalemate', cursive, sans-serif;
 // mixins
 @import './mixin.scss';
 
@@ -9,7 +11,7 @@
 
 // shared css
 .title {
-  font-family: 'Great Vibes', 'Stalemate', cursive;
+  font-family: $greatvibes;
 }
 
 .warning {
@@ -18,14 +20,14 @@
 }
 
 .btn {
-  font-family: 'MedievalSharp', cursive;
+  font-family: $medieval;
   font-size: 16px;
   font-weight: 600;
   height: 36px;
   border-radius: 22px;
   &.common {
     background-color: $color-brown;
-    border: 2px solid white;
+    border: 2px solid $color-brown;
     color: white;
   }
   &.clear {

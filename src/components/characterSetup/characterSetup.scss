@@ -23,9 +23,6 @@
                 .btn {
                     height: 30px;
                     width: 36px;
-                    border: 2px solid white;
-                    color: white;
-                    background-color: $color-brown;
                     font-size: 24px;
                     line-height: 24px;
                     &.plus {
@@ -62,7 +59,7 @@
         margin-top: 10px;
         .btn {
             &.clear {
-                width: 25%;
+                width: 45%;
             }
             &.common {
                 width: 45%;

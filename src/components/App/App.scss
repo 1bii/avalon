@@ -3,16 +3,31 @@
 .App {
   @include display-flex;
   @include flex-direction(column);
-  font-family: 'MedievalSharp', 'Century Gothic', serif;
+  font-family: $medieval;
   font-size: 20px;
   padding: 40px;
-  .app-title {
-    text-align: center;
+  .title-section {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
     margin-bottom: 20px;
-    font-size: 50px;
-    font-weight: bold;
     padding-bottom: 20px;
     border-bottom: 4px solid;
+    .app-title {
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    .fa-home {
+      margin-left: 20px;
+      padding: 5px;
+      border: 3px solid black;
+      border-radius: 22px;
+      color: black;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   .page-content {
     @include display-flex;
