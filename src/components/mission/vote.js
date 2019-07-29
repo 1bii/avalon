@@ -45,6 +45,7 @@ class Vote extends React.Component {
             else return;
             // clear state
             return this.state = {
+                ...this.state,
                 showInvalidFailWarning: false,
                 voterIndex: 0,
                 failCount: 0
