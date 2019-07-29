@@ -141,7 +141,9 @@ class AssignCharacters extends React.Component {
     }
 
     onConfirmClick = () => {
-        if (this.state.currentPlayerIndex === this.props.playerList.length - 1) return;
+        if (this.state.currentPlayerIndex === this.props.playerList.length - 1) {
+            this.props.dispatch({type: pageActions.change, page: pageMap.mission});
+        }
         this.setState({
             ...this.state,
             currentPlayerIndex: this.state.currentPlayerIndex + 1,

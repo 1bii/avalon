@@ -4,6 +4,7 @@ import './playerSetup.scss';
 import { pageMap } from '../../service/page-service';
 import playerActions from '../../actions/players';
 import pageActions from '../../actions/page';
+import { async } from 'q';
 
 class PlayerSetup extends React.Component {
     constructor() {
@@ -57,7 +58,8 @@ class PlayerSetup extends React.Component {
         event.preventDefault();
     }
 
-    startGame = () => {
+    startGame = async () => {
+        await this.props.dispatch({type: playerActions.shuffle});
         this.props.dispatch({type: pageActions.change, page: pageMap.characters});
     }
     clearPlayers = () => {

@@ -1,4 +1,5 @@
 import actions from '../actions/players';
+import { shuffle } from '../service/utils';
 
 const initialState = {
     // playerList: []
@@ -35,6 +36,11 @@ const reducer = (state = initialState, action) => {
                     ...player,
                     role: action.assignableList[i]
                 }))
+            }
+        case actions.shuffle:
+            return {
+                ...state,
+                playerList: shuffle(state.playerList)
             }
         default:
             return state; 

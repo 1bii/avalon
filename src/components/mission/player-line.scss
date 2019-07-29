@@ -1,0 +1,24 @@
+@import '../../scss/common.scss';
+
+.player-line {
+    @include display-flex;
+    @include align-items(center);
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px 10px 10px 10%;
+    background-color: white;
+    opacity: 0.5;
+    border: 2px solid $color-gray;
+    border-radius: 8px;
+    &:hover {
+        cursor: pointer;
+    }
+    &.selected {
+        opacity: 0.8;
+        border: 2px solid $color-light-green;
+    }
+    .fa-check-circle {
+        margin-right: 10px;
+        color: $color-light-green;
+    }
+}

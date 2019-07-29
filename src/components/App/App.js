@@ -4,6 +4,7 @@ import pageActions from '../../actions/page';
 import PlayerSetup from '../playerSetup/playerSetup';
 import CharacterSetup from '../characterSetup/characterSetup';
 import AssignCharacter from '../assignCharacters/assignCharacters';
+import Mission from '../mission/mission';
 import { pageMap } from '../../service/page-service';
 import './App.scss';
 
@@ -23,6 +24,7 @@ class App extends React.Component {
           {this.props.currentPage === pageMap.playerSetup && <PlayerSetup></PlayerSetup>}
           {this.props.currentPage === pageMap.characters && <CharacterSetup></CharacterSetup>}
           {this.props.currentPage === pageMap.assignCharacters && <AssignCharacter></AssignCharacter>}
+          {this.props.currentPage === pageMap.mission && <Mission></Mission>}
         </div>
       </div>
     );

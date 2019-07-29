@@ -14,9 +14,23 @@ $greatvibes: 'Great Vibes', 'Stalemate', cursive, sans-serif;
   font-family: $greatvibes;
 }
 
+.player-name {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: $gothic;
+  font-weight: bold;
+}
+
 .warning {
+  @include display-flex;
+  @include align-items(center);
+  @include align-self(flex-start);
   color: $color-warning;
   font-weight: bold;
+    .fa-hand-point-right {
+      margin-right: 10px;
+  }
 }
 
 .btn {
@@ -34,6 +48,16 @@ $greatvibes: 'Great Vibes', 'Stalemate', cursive, sans-serif;
     background-color: transparent;
     border: 2px solid black;
     color: black;
+  }
+  &.success {
+    background-color: $color-blue;
+    border: 2px solid white;
+    color: white;
+  }
+  &.fail {
+    background-color: $color-red;
+    border: 2px solid white;
+    color: white;
   }
   &:hover {
     cursor: pointer;

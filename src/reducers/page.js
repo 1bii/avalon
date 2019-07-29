@@ -4,6 +4,7 @@ const initialState = {
     current: pageMap.playerSetup
     // current: pageMap.characters
     // current: pageMap.assignCharacters
+    // current: pageMap.mission
 }
 
 const reducer = (state = initialState, action) => {
