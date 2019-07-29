@@ -79,7 +79,7 @@ class CharacterSetup extends React.Component {
                 </div>
                 <div className="final-button-section">
                     <button className="btn clear" onClick={this.resetCharacter}>Reset</button>
-                    <button className="btn common" onClick={this.startGame} disabled={this.props.playerList.length > this.props.selectedCount}>Start</button>
+                    <button className="btn common" onClick={this.startGame} disabled={this.props.playerList.length > this.props.selectedCount || !this.isGoodEvilBalanced()}>Start</button>
                 </div>
             </div>
         );

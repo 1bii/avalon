@@ -1,9 +1,9 @@
 import { pageMap } from '../service/page-service';
 
 const initialState = {
-    // current: pageMap.playerSetup
+    current: pageMap.playerSetup
     // current: pageMap.characters
-    current: pageMap.assignCharacters
+    // current: pageMap.assignCharacters
 }
 
 const reducer = (state = initialState, action) => {

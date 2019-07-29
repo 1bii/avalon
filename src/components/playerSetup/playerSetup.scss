@@ -9,6 +9,14 @@
         font-size: 30px;
     }
     
+    .input-section {
+        @include display-flex;
+        @include justify-content(center);
+        input {
+            width: 50%;
+        }
+    }
+
     .name-section {
         @include display-flex;
         @include flex-direction(column);
@@ -22,6 +30,10 @@
             }
         }
     }
+
+    .button-section {
+        margin-top: 10px;
+    }
     
     .btn {
         padding: 0 16px;
@@ -29,11 +41,17 @@
             margin-left: 10px;
         }
         &.start-game {
-            margin: 10px 0 0 10px;
+            margin-left: 10px;
         }
     }
 
     .warning {
+        @include display-flex;
+        @include align-items(center);
+        @include align-self(flex-start);
         margin: 10px 0;
+        .fa-hand-point-right {
+            margin-right: 10px;
+        }
     }
 }

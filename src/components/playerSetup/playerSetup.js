@@ -9,6 +9,10 @@ class PlayerSetup extends React.Component {
     constructor() {
         super();
         this.input = React.createRef();
+        this.state = {
+            showDuplicateWarning: false,
+            showOverflowWarning: false
+        }
     }
 
     handleInputEnter = (event) => {
@@ -19,6 +23,34 @@ class PlayerSetup extends React.Component {
 
     addPlayer = (event) => {
         if (this.input && this.input.current && this.input.current.value !== '') {
+            // check duplicate name
+            if (this.props.playerList.filter(player => player.name === this.input.current.value).length > 0) {
+                this.setState({
+                    ...this.state,
+                    showDuplicateWarning: true
+                });
+                setTimeout(() => {
+                    this.setState({
+                        ...this.state,
+                        showDuplicateWarning: false
+                    });
+                }, 3000);
+                return;
+            }
+            // check overflow
+            if (this.props.playerList.length >= 10) {
+                this.setState({
+                    ...this.state,
+                    showOverflowWarning: true
+                });
+                setTimeout(() => {
+                    this.setState({
+                        ...this.state,
+                        showOverflowWarning: false
+                    });
+                }, 3000);
+                return;
+            }
             this.props.dispatch({type: playerActions.add, player: this.input.current.value});
             this.input.current.value = '';
         }
@@ -36,9 +68,9 @@ class PlayerSetup extends React.Component {
         return (
             <div className="player-setup">
                 <div className="title">Please add players</div>
-                <div>
+                <div className="input-section">
                     <input type="text" ref={this.input} onKeyDown={this.handleInputEnter}/>
-                    <button className="btn common add-player" onClick={this.addPlayer}>Add player</button>
+                    <button className="btn common add-player" onClick={this.addPlayer}>Add</button>
                 </div>
                 <div className="name-section">{this.props.playerList.map(({name}, i) => 
                     <div className="name-item" key={i}>{`${i+1}. ${name}`}</div>
@@ -51,9 +83,23 @@ class PlayerSetup extends React.Component {
                         <button className="btn common start-game" onClick={this.startGame}>Let's Go</button>
                     }
                 </div>
-                
                 { this.props.playerList.length < 5 && 
-                    <div className="warning">You need at least five players</div>
+                    <div className="warning">
+                        <i className="far fa-hand-point-right"></i>
+                        <div>You need at least five players</div>
+                    </div>
+                }
+                { this.state.showOverflowWarning && 
+                    <div className="warning">
+                        <i className="far fa-hand-point-right"></i>
+                        <div>Players number exceeded!</div>
+                    </div>
+                }
+                { this.state.showDuplicateWarning && 
+                    <div className="warning">
+                        <i className="far fa-hand-point-right"></i>
+                        <div>Name existed!</div>
+                    </div>
                 }
             </div>
         );

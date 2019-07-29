@@ -5,27 +5,27 @@ const initialState = {
     characterList: {
         merlin: {
             maxCount: 1,
-            count: 1,
+            count: 0,
             order: 0
         },
         percival: {
             maxCount: 1,
-            count: 1,
+            count: 0,
             order: 1
         },
         servant: {
             maxCount: 5,
-            count: 1,
+            count: 0,
             order: 2
         },
         mordred: {
             maxCount: 1,
-            count: 1,
+            count: 0,
             order: 3
         },
         morgana: {
             maxCount: 1,
-            count: 1,
+            count: 0,
             order: 4
         },
         assassin: {
@@ -44,7 +44,7 @@ const initialState = {
             order: 7
         }
     },
-    selectedCount: 5,
+    selectedCount: 0,
     assignableList: []
 }
 
