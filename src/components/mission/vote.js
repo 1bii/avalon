@@ -33,11 +33,6 @@ class Vote extends React.Component {
     }
 
     onVoteClick = (success) => {
-        this.setState({
-            ...this.state,
-            showInvalidFailWarning: false
-        });
-        console.log(success);
         // if is the last one
         if (this.state.voterIndex === this.props.voters.length - 1) {
             if (success) this.props.onFinish(this.state.failCount);
@@ -55,11 +50,13 @@ class Vote extends React.Component {
         if (success) {
             this.setState({
                 ...this.state,
+                showInvalidFailWarning: false,
                 voterIndex: this.state.voterIndex + 1
             });
         } else if (this.isFailValid()) {
             this.setState({
                 ...this.state,
+                showInvalidFailWarning: false,
                 voterIndex: this.state.voterIndex + 1,
                 failCount: this.state.failCount + 1
             });

@@ -2,14 +2,14 @@ import actions from '../actions/players';
 import { shuffle } from '../service/utils';
 
 const initialState = {
-    // playerList: []
-    playerList: [
-        {name: 'Alice', role: null},
-        {name: 'Bob', role: null},
-        {name: 'Cathy', role: null},
-        {name: 'Dickson', role: null},
-        {name: 'Evelyn', role: null},
-    ]
+    playerList: []
+    // playerList: [
+    //     {name: 'Alice', role: null},
+    //     {name: 'Bob', role: null},
+    //     {name: 'Cathy', role: null},
+    //     {name: 'Dickson', role: null},
+    //     {name: 'Evelyn', role: null},
+    // ]
 }
 
 const reducer = (state = initialState, action) => {

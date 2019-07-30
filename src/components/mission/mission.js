@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import './mission.scss';
-import PlayerLine from './player-line';
+import PlayerLine from '../player-line/player-line';
 import Vote from './vote';
 import { pageMap, rules } from '../../service/page-service';
 import pageActions from '../../actions/page';
@@ -68,12 +68,14 @@ class Mission extends React.Component {
         if (this.props.gameStatus.round === 4 || this.props.gameStatus.successCount === 3) {
             // end the game
             this.props.dispatch({type: gameActions.endGame});
+            this.props.dispatch({type: pageActions.change, page: pageMap.goodGame});
         } else {
             // step to next round
             await this.props.dispatch({type: gameActions.stepToNextRound});
             if (this.props.gameStatus.round - this.props.gameStatus.successCount === 3) {
                 // fail 3 times, end the game
                 this.props.dispatch({type: gameActions.endGame});
+                this.props.dispatch({type: pageActions.change, page: pageMap.goodGame});
             }
             this.setState({
                 ...this.state,
@@ -154,7 +156,9 @@ class Mission extends React.Component {
                     <div className="choose-team">
                         <div className="player-name">{this.props.playerList[this.props.gameStatus.leaderIndex].name}</div>
                         <div className="message">Please choose your team</div>
-                        {this.props.playerList.map((player, i) => <PlayerLine key={i} name={player.name} onClick={(name) => this.onPlayerLineClick(name)}></PlayerLine>)}
+                        {this.props.playerList.map((player, i) => 
+                            <PlayerLine key={i} name={player.name} selected={this.props.gameStatus.selectedTeam.has(player.name)} onClick={(name) => this.onPlayerLineClick(name)}></PlayerLine>
+                        )}
                         { this.state.showMemberCountExceedWarning && 
                             <div className="warning">
                                 <i className="far fa-hand-point-right"></i>

@@ -5,6 +5,7 @@ const initialState = {
     // current: pageMap.characters
     // current: pageMap.assignCharacters
     // current: pageMap.mission
+    // current: pageMap.goodGame
 }
 
 const reducer = (state = initialState, action) => {

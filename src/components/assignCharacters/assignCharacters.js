@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import './assignCharacters.scss';
 import { pageMap, evilRoles } from '../../service/page-service';
 import pageActions from '../../actions/page';
+import gameActions from '../../actions/gameStatus';
 
 class AssignCharacters extends React.Component {
     constructor(props) {
@@ -140,8 +141,9 @@ class AssignCharacters extends React.Component {
         }
     }
 
-    onConfirmClick = () => {
+    onConfirmClick = async () => {
         if (this.state.currentPlayerIndex === this.props.playerList.length - 1) {
+            await this.props.dispatch({type: gameActions.setLeader, index: Math.floor(Math.random() * this.props.playerList.length)});
             this.props.dispatch({type: pageActions.change, page: pageMap.mission});
         }
         this.setState({

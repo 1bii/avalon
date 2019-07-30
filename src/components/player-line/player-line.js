@@ -4,13 +4,14 @@ import classNames from 'classnames';
 import './player-line.scss';
 
 class PlayerLine extends React.Component {
+    // props: name, selected, onClick
     constructor(prop) {
         super(prop);
     }
 
     render() {
         return (
-            <div className={classNames('player-line', {'selected': this.props.gameStatus.selectedTeam.has(this.props.name)})} 
+            <div className={classNames('player-line', {'selected': this.props.selected})} 
                 onClick={() => this.props.onClick(this.props.name)}>
                 {this.props.gameStatus.selectedTeam.has(this.props.name) &&
                     <i className="far fa-check-circle"></i>

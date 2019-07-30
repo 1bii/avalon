@@ -1,0 +1,35 @@
+@import '../../scss/common.scss';
+
+.good-game {
+    .kill-merlin {
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(center);
+        .player-name {
+            font-size: 30px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .player-list-section {
+            @include display-flex;
+            @include flex-direction(column);
+            @include align-items(center);
+            margin: 10px 0;
+            width: 100%;
+        }
+    }
+    .game-end {
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(center);
+        .message {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 80%;
+        }
+    }
+    .btn.common {
+        width: 100px;
+    }
+}

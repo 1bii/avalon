@@ -59,7 +59,7 @@ class PlayerSetup extends React.Component {
     }
 
     startGame = async () => {
-        await this.props.dispatch({type: playerActions.shuffle});
+        // await this.props.dispatch({type: playerActions.shuffle});
         this.props.dispatch({type: pageActions.change, page: pageMap.characters});
     }
     clearPlayers = () => {
