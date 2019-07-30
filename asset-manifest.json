@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/avalon/static/css/main.4b909e45.chunk.css",
-    "main.js": "/avalon/static/js/main.29ed3ed0.chunk.js",
-    "main.js.map": "/avalon/static/js/main.29ed3ed0.chunk.js.map",
+    "main.css": "/avalon/static/css/main.192d20e9.chunk.css",
+    "main.js": "/avalon/static/js/main.ab75162c.chunk.js",
+    "main.js.map": "/avalon/static/js/main.ab75162c.chunk.js.map",
     "runtime~main.js": "/avalon/static/js/runtime~main.b7d50eed.js",
     "runtime~main.js.map": "/avalon/static/js/runtime~main.b7d50eed.js.map",
-    "static/js/2.abda7ece.chunk.js": "/avalon/static/js/2.abda7ece.chunk.js",
-    "static/js/2.abda7ece.chunk.js.map": "/avalon/static/js/2.abda7ece.chunk.js.map",
+    "static/js/2.6f959ed8.chunk.js": "/avalon/static/js/2.6f959ed8.chunk.js",
+    "static/js/2.6f959ed8.chunk.js.map": "/avalon/static/js/2.6f959ed8.chunk.js.map",
     "index.html": "/avalon/index.html",
-    "precache-manifest.c2da6218fac39f7a7d968ebc5f4851a9.js": "/avalon/precache-manifest.c2da6218fac39f7a7d968ebc5f4851a9.js",
+    "precache-manifest.82ac8174f8ec3d59a9fd3394ccd136da.js": "/avalon/precache-manifest.82ac8174f8ec3d59a9fd3394ccd136da.js",
     "service-worker.js": "/avalon/service-worker.js",
-    "static/css/main.4b909e45.chunk.css.map": "/avalon/static/css/main.4b909e45.chunk.css.map",
+    "static/css/main.192d20e9.chunk.css.map": "/avalon/static/css/main.192d20e9.chunk.css.map",
     "static/media/assassin.jpg": "/avalon/static/media/assassin.e7fdef50.jpg",
+    "static/media/defeat.png": "/avalon/static/media/defeat.b420bfe5.png",
     "static/media/merlin.jpg": "/avalon/static/media/merlin.d9a34f22.jpg",
     "static/media/minion.jpg": "/avalon/static/media/minion.d8ec044c.jpg",
     "static/media/mordred.jpg": "/avalon/static/media/mordred.017624c8.jpg",
@@ -19,6 +20,7 @@
     "static/media/oberon.jpg": "/avalon/static/media/oberon.3b87a760.jpg",
     "static/media/index.css": "/avalon/static/media/parchment.bc061578.jpg",
     "static/media/percival.jpg": "/avalon/static/media/percival.9987db5b.jpg",
-    "static/media/servant.jpg": "/avalon/static/media/servant.73d1b559.jpg"
+    "static/media/servant.jpg": "/avalon/static/media/servant.73d1b559.jpg",
+    "static/media/victory.png": "/avalon/static/media/victory.cbab7227.png"
   }
 }

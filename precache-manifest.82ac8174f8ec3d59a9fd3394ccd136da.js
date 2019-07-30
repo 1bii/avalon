@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1c85d9cabf2391d8b6dadd547188ec27",
+    "revision": "2cc717770c252454d5aca66d244f482f",
     "url": "/avalon/index.html"
   },
   {
-    "revision": "a4f0e0929898d8f55ec5",
-    "url": "/avalon/static/css/main.4b909e45.chunk.css"
+    "revision": "3582dd70f4d597a5d6b7",
+    "url": "/avalon/static/css/main.192d20e9.chunk.css"
   },
   {
-    "revision": "5d5cbb0599c5c15d837a",
-    "url": "/avalon/static/js/2.abda7ece.chunk.js"
+    "revision": "325df869678444d3e4ef",
+    "url": "/avalon/static/js/2.6f959ed8.chunk.js"
   },
   {
-    "revision": "a4f0e0929898d8f55ec5",
-    "url": "/avalon/static/js/main.29ed3ed0.chunk.js"
+    "revision": "3582dd70f4d597a5d6b7",
+    "url": "/avalon/static/js/main.ab75162c.chunk.js"
   },
   {
     "revision": "3f9c296800172b050d6b",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e7fdef508926bbd6df80f820bd25a0a6",
     "url": "/avalon/static/media/assassin.e7fdef50.jpg"
+  },
+  {
+    "revision": "b420bfe54afe1cb4ca89a05c5e05951a",
+    "url": "/avalon/static/media/defeat.b420bfe5.png"
   },
   {
     "revision": "d9a34f22785fce8051f0232cb6b3ed0e",
@@ -54,5 +58,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "73d1b5599a40a73097668923ed69e745",
     "url": "/avalon/static/media/servant.73d1b559.jpg"
+  },
+  {
+    "revision": "cbab7227ad515b94015eb82b1e2e1d47",
+    "url": "/avalon/static/media/victory.cbab7227.png"
   }
 ]);
