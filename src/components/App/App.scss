@@ -5,7 +5,7 @@
   @include flex-direction(column);
   font-family: $medieval;
   font-size: 20px;
-  padding: 40px;
+  margin: 40px;
   .title-section {
     @include display-flex;
     @include align-items(center);
