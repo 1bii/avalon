@@ -5,11 +5,11 @@
         @include display-flex;
         @include flex-direction(column);
         @include align-items(center);
-        .player-name {
-            font-size: 30px;
-            line-height: 40px;
-            text-align: center;
-        }
+        // .player-name {
+        //     font-size: 30px;
+        //     line-height: 40px;
+        //     text-align: center;
+        // }
         .player-list-section {
             @include display-flex;
             @include flex-direction(column);

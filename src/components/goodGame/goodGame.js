@@ -9,21 +9,16 @@ import gameActions from '../../actions/gameStatus';
 class GoodGame extends React.Component {
     constructor(props) {
         super(props);
+        let assassinList = this.props.playerList.filter(player => player.role === 'assassin');
         this.state = {
-            canKill: this.props.gameStatus.successCount === 3 && this.props.playerList.filter(player => player.role === 'merlin').length > 0,
+            canKill: this.props.gameStatus.successCount === 3 && 
+                this.props.playerList.filter(player => player.role === 'merlin').length > 0 &&
+                assassinList.length > 0,
             victory: this.props.gameStatus.successCount >= 3,
-            badGuyList: this.props.playerList.filter(player => evilRoles.indexOf(player.role) >= 0).map(player => player.name).join(', '),
+            assassin: assassinList.length > 0 && assassinList[0].name,
             goodGuyList: this.props.playerList.filter(player => evilRoles.indexOf(player.role) < 0),
             selectedMerlin: null
         }
-        // this.state = {
-        //     defeated: false,
-        //     victory: false,
-        //     hasMerlin: true,
-        //     badGuyList: ['We', 'Are', 'Fucking', 'Bad'].join(', '),
-        //     goodGuyList: [{name: 'M'}, {name: 'E'}, {name: 'R'}, {name: 'L'}, {name: 'IN'}],
-        //     selectedMerlin: null
-        // }
     }
 
     onPlayerLineClick = (name) => {
@@ -51,7 +46,7 @@ class GoodGame extends React.Component {
             <div className="good-game">
                 {  this.state.canKill &&
                     <div className="kill-merlin">
-                        <div className="player-name">{this.state.badGuyList}</div>
+                        <div className="player-name">{this.state.assassin}</div>
                         <div>Assassinate Merlin</div>
                         <div className="player-list-section">
                             {this.state.goodGuyList.map(({name}, i) => 
