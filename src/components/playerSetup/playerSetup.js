@@ -71,7 +71,7 @@ class PlayerSetup extends React.Component {
             <div className="player-setup">
                 <div className="title">Please add players</div>
                 <div className="input-section">
-                    <input type="text" ref={this.input} onKeyDown={this.handleInputEnter}/>
+                    <input type="text" ref={this.input} onKeyDown={this.handleInputEnter} placeholder="Ex: Alex"/>
                     <button className="btn common add-player" onClick={this.addPlayer}>Add</button>
                 </div>
                 <div className="name-section">{this.props.playerList.map(({name}, i) => 
