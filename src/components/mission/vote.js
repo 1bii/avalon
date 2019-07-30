@@ -39,12 +39,12 @@ class Vote extends React.Component {
             else if (this.isFailValid()) this.props.onFinish(this.state.failCount + 1);
             else return;
             // clear state
-            return this.state = {
+            return this.setState({
                 ...this.state,
                 showInvalidFailWarning: false,
                 voterIndex: 0,
                 failCount: 0
-            }
+            });
         }
         // keep moving on
         if (success) {

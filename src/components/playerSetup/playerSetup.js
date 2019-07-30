@@ -4,7 +4,6 @@ import './playerSetup.scss';
 import { pageMap } from '../../service/page-service';
 import playerActions from '../../actions/players';
 import pageActions from '../../actions/page';
-import { async } from 'q';
 
 class PlayerSetup extends React.Component {
     constructor() {

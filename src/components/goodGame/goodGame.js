@@ -58,14 +58,14 @@ class GoodGame extends React.Component {
                 }
                 { (!this.state.canKill && this.state.victory) &&
                     <div className="game-end">
-                        <img src={require('../../resource/cool/victory.png')} alt="victory-image"></img>
+                        <img src={require('../../resource/cool/victory.png')} alt="victory"></img>
                         <div className="message">Good wins</div>
                         <button className="btn common" onClick={this.backToHome}>Home</button>
                     </div>
                 }
                 { (!this.state.canKill && !this.state.victory) &&
                     <div className="game-end">
-                        <img src={require('../../resource/cool/defeat.png')} alt="defeat-image"></img>
+                        <img src={require('../../resource/cool/defeat.png')} alt="defeat"></img>
                         <div className="message">Evil wins</div>
                         <button className="btn common" onClick={this.backToHome}>Home</button>
                     </div>

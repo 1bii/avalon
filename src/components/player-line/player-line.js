@@ -5,9 +5,6 @@ import './player-line.scss';
 
 class PlayerLine extends React.Component {
     // props: name, selected, onClick
-    constructor(prop) {
-        super(prop);
-    }
 
     render() {
         return (
