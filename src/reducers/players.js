@@ -42,6 +42,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 playerList: shuffle(state.playerList)
             }
+        case actions.initialWithData:
+            return {
+                ...state,
+                playerList: action.data
+            }
         default:
             return state; 
     }

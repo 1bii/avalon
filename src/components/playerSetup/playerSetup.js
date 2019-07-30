@@ -1,17 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withCookies } from 'react-cookie';
 import './playerSetup.scss';
 import { pageMap } from '../../service/page-service';
 import playerActions from '../../actions/players';
 import pageActions from '../../actions/page';
 
 class PlayerSetup extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        const { cookies } = this.props;
         this.input = React.createRef();
         this.state = {
             showDuplicateWarning: false,
             showOverflowWarning: false
+        }
+        let playerListFromCookie = cookies.get('avalonPlayerList');
+        if (playerListFromCookie) {
+            this.props.dispatch({type: playerActions.initialWithData, data: playerListFromCookie});
         }
     }
 
@@ -59,9 +65,11 @@ class PlayerSetup extends React.Component {
 
     startGame = async () => {
         // await this.props.dispatch({type: playerActions.shuffle});
+        this.props.cookies.set('avalonPlayerList', this.props.playerList);
         this.props.dispatch({type: pageActions.change, page: pageMap.characters});
     }
     clearPlayers = () => {
+        this.props.cookies.set('avalonPlayerList', []);
         this.props.dispatch({type: playerActions.clear});
     }
     
@@ -113,4 +121,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(PlayerSetup);
+export default withCookies(connect(mapStateToProps)(PlayerSetup));
