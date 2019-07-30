@@ -156,6 +156,7 @@ class Mission extends React.Component {
                     <div className="choose-team">
                         <div className="player-name">{this.props.playerList[this.props.gameStatus.leaderIndex].name}</div>
                         <div className="message">Please choose your team</div>
+                        <div className="message small">{`(${this.state.rule.roundTeamCount[this.props.gameStatus.round]} members)`}</div>
                         {this.props.playerList.map((player, i) => 
                             <PlayerLine key={i} name={player.name} selected={this.props.gameStatus.selectedTeam.has(player.name)} onClick={(name) => this.onPlayerLineClick(name)}></PlayerLine>
                         )}
