@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/avalon/static/css/main.192d20e9.chunk.css",
+    "main.css": "/avalon/static/css/main.871fa308.chunk.css",
     "main.js": "/avalon/static/js/main.ab75162c.chunk.js",
     "main.js.map": "/avalon/static/js/main.ab75162c.chunk.js.map",
     "runtime~main.js": "/avalon/static/js/runtime~main.b7d50eed.js",
@@ -8,9 +8,9 @@
     "static/js/2.6f959ed8.chunk.js": "/avalon/static/js/2.6f959ed8.chunk.js",
     "static/js/2.6f959ed8.chunk.js.map": "/avalon/static/js/2.6f959ed8.chunk.js.map",
     "index.html": "/avalon/index.html",
-    "precache-manifest.82ac8174f8ec3d59a9fd3394ccd136da.js": "/avalon/precache-manifest.82ac8174f8ec3d59a9fd3394ccd136da.js",
+    "precache-manifest.ccc0ceaad303aabf65dd595504d0f00d.js": "/avalon/precache-manifest.ccc0ceaad303aabf65dd595504d0f00d.js",
     "service-worker.js": "/avalon/service-worker.js",
-    "static/css/main.192d20e9.chunk.css.map": "/avalon/static/css/main.192d20e9.chunk.css.map",
+    "static/css/main.871fa308.chunk.css.map": "/avalon/static/css/main.871fa308.chunk.css.map",
     "static/media/assassin.jpg": "/avalon/static/media/assassin.e7fdef50.jpg",
     "static/media/defeat.png": "/avalon/static/media/defeat.b420bfe5.png",
     "static/media/merlin.jpg": "/avalon/static/media/merlin.d9a34f22.jpg",
