@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "672faa25769f846a69fb530fdd5b78c4",
+    "revision": "0bf7ea95828a82ee872c0d0186808dab",
     "url": "/avalon/index.html"
   },
   {
-    "revision": "3217ae64825f3d09b477",
+    "revision": "784bf2b0ed1b96fbe30a",
     "url": "/avalon/static/css/main.f52d9deb.chunk.css"
   },
   {
-    "revision": "325df869678444d3e4ef",
-    "url": "/avalon/static/js/2.6f959ed8.chunk.js"
+    "revision": "d6c218e23552ab1278ad",
+    "url": "/avalon/static/js/2.b28050e7.chunk.js"
   },
   {
-    "revision": "3217ae64825f3d09b477",
-    "url": "/avalon/static/js/main.a07e8e87.chunk.js"
+    "revision": "784bf2b0ed1b96fbe30a",
+    "url": "/avalon/static/js/main.da361d0d.chunk.js"
   },
   {
     "revision": "3f9c296800172b050d6b",
