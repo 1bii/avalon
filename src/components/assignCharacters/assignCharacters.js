@@ -60,7 +60,7 @@ class AssignCharacters extends React.Component {
                 break;
             case 'mordred':
                 observableNamesArray = this.props.playerList
-                    .filter(player => evilRoles.indexOf(player.role) >= 0)
+                    .filter(player => evilRoles.indexOf(player.role) >= 0 && player.role !== 'oberon')
                     .filter(player => player.name !== this.props.playerList[this.state.currentPlayerIndex].name)
                     .map(player => player.name)
                 this.setState({
@@ -75,7 +75,7 @@ class AssignCharacters extends React.Component {
                 break;
             case 'morgana':
                 observableNamesArray = this.props.playerList
-                    .filter(player => evilRoles.indexOf(player.role) >= 0)
+                    .filter(player => evilRoles.indexOf(player.role) >= 0 && player.role !== 'oberon')
                     .filter(player => player.name !== this.props.playerList[this.state.currentPlayerIndex].name)
                     .map(player => player.name)
                 this.setState({
@@ -90,7 +90,7 @@ class AssignCharacters extends React.Component {
                 break;
             case 'assassin':
                 observableNamesArray = this.props.playerList
-                    .filter(player => evilRoles.indexOf(player.role) >= 0)
+                    .filter(player => evilRoles.indexOf(player.role) >= 0 && player.role !== 'oberon')
                     .filter(player => player.name !== this.props.playerList[this.state.currentPlayerIndex].name)
                     .map(player => player.name)
                 this.setState({
@@ -105,7 +105,7 @@ class AssignCharacters extends React.Component {
                 break;
             case 'minion':
                 observableNamesArray = this.props.playerList
-                    .filter(player => evilRoles.indexOf(player.role) >= 0)
+                    .filter(player => evilRoles.indexOf(player.role) >= 0 && player.role !== 'oberon')
                     .filter(player => player.name !== this.props.playerList[this.state.currentPlayerIndex].name)
                     .map(player => player.name)
                 this.setState({
