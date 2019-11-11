@@ -16,6 +16,9 @@
             &.success {
                 margin-right: 20px;
             }
+            &:focus {
+                outline: none;
+            }
         }
     }
     .warning {
