@@ -1,9 +1,13 @@
+import React from 'react';
+import { Route } from 'react-router-dom';
+
 export const pageMap = {
     playerSetup: 'playerSetup',
     characters: 'characters',
     assignCharacters: 'assignCharacters',
     mission: 'mission',
-    goodGame: 'goodGame'
+    goodGame: 'goodGame',
+    setting: 'setting'
 }
 
 export const evilRoles = ['mordred', 'morgana', 'oberon', 'assassin', 'minion'];

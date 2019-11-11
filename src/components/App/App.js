@@ -1,36 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import pageActions from '../../actions/page';
-import gameActions from '../../actions/gameStatus';
+import { BrowserRouter, Route } from 'react-router-dom';
 import PlayerSetup from '../playerSetup/playerSetup';
 import CharacterSetup from '../characterSetup/characterSetup';
 import AssignCharacter from '../assignCharacters/assignCharacters';
 import Mission from '../mission/mission';
 import GoodGame from '../goodGame/goodGame';
+import Header from '../Header/Header';
+import Setting from '../Setting/Setting';
 import { pageMap } from '../../service/page-service';
 import './App.scss';
 
 class App extends React.Component {
-  backToHome = async () => {
-    await this.props.dispatch({type: gameActions.reset});
-    this.props.dispatch({type: pageActions.change, page: pageMap.playerSetup});
+  Home = () => {
+    return (
+      <div className="page-content">
+        {this.props.currentPage === pageMap.playerSetup && <PlayerSetup></PlayerSetup>}
+        {this.props.currentPage === pageMap.characters && <CharacterSetup></CharacterSetup>}
+        {this.props.currentPage === pageMap.assignCharacters && <AssignCharacter></AssignCharacter>}
+        {this.props.currentPage === pageMap.mission && <Mission></Mission>}
+        {this.props.currentPage === pageMap.goodGame && <GoodGame></GoodGame>}
+      </div>
+    );
   }
+
+
 
   render() {
     return (
-      <div className="App">
-        <div className="title-section">
-          <div className="title app-title">Avalon</div>
-          {this.props.currentPage !== pageMap.playerSetup && <i className="fas fa-home" onClick={this.backToHome}></i>}
+      <BrowserRouter>
+        <div className="App">
+          <Header></Header>
+          <Route path="/" exact component={this.Home} />
+          <Route path="/setting" component={Setting} />
         </div>
-        <div className="page-content">
-          {this.props.currentPage === pageMap.playerSetup && <PlayerSetup></PlayerSetup>}
-          {this.props.currentPage === pageMap.characters && <CharacterSetup></CharacterSetup>}
-          {this.props.currentPage === pageMap.assignCharacters && <AssignCharacter></AssignCharacter>}
-          {this.props.currentPage === pageMap.mission && <Mission></Mission>}
-          {this.props.currentPage === pageMap.goodGame && <GoodGame></GoodGame>}
-        </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

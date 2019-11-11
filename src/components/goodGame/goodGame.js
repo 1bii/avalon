@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './goodGame.scss';
-import PlayerLine from '../player-line/player-line';
+import PlayerLine from '../playerLine/playerLine';
 import { pageMap, evilRoles } from '../../service/page-service';
 import pageActions from '../../actions/page';
 import gameActions from '../../actions/gameStatus';

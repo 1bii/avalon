@@ -1,0 +1,21 @@
+@import '../../scss/common.scss';
+
+.setting-page {
+    @include display-flex;
+    @include justify-content(center);
+    @include flex-direction(column);
+    @include align-items(center);
+    .title {
+        margin-bottom: 20px;
+    }
+    .setting-line {
+        @include display-flex;
+        @include justify-content(space-between);
+        @include align-items(center);
+        width: 100%;
+        // overwrite bootstrap
+        .dropdown-menu {
+            min-width: 0;
+        }
+    }
+}

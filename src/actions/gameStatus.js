@@ -6,7 +6,8 @@ const actions = {
     clearPlayer: 'GAME_STATUS_CLEAR_PLAYER',
     endGame: 'GAME_STATUS_END_GAME',
     addRejects: 'GAME_STATUS_ADD_REJECTS',
-    reset: 'GAME_STATUS_RESET'
+    reset: 'GAME_STATUS_RESET',
+    addLakeGoddess: 'GAME_STATUS_ADD_LAKE_GODDESS'
 }
 
 export default actions;

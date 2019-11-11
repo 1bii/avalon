@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import './assignCharacters.scss';
 import { pageMap, evilRoles } from '../../service/page-service';
+import { getImage } from '../../service/image-service';
 import pageActions from '../../actions/page';
 import gameActions from '../../actions/gameStatus';
 
@@ -169,7 +170,10 @@ class AssignCharacters extends React.Component {
                         <div className={classNames("role", 
                             {'evil': ['mordred', 'morgana', 'oberon', 'assassin', 'minion'].indexOf(this.props.playerList[this.state.currentPlayerIndex].role) >= 0})}>
                             {this.props.playerList[this.state.currentPlayerIndex].role.toUpperCase()}</div>
-                        <img src={this.imageMap[this.props.playerList[this.state.currentPlayerIndex].role]} alt={this.props.playerList[this.state.currentPlayerIndex].role + 'image'}></img>
+                        <img src={getImage(
+                            this.props.preference.theme,
+                            [this.props.playerList[this.state.currentPlayerIndex].role]
+                        )} alt={this.props.playerList[this.state.currentPlayerIndex].role + 'image'}></img>
                         {this.state.extraInfo && <div className="extra-info">{this.state.extraInfo}</div>}
                         {this.state.observableNames && <div className="name-list">{this.state.observableNames}</div>}
                         {this.state.reminder && 
@@ -188,7 +192,8 @@ class AssignCharacters extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        playerList: state.players.playerList
+        playerList: state.players.playerList,
+        preference: state.preference
     }
 };
 
