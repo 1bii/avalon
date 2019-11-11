@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
-import './player-line.scss';
+import './playerLine.scss';
 
 class PlayerLine extends React.Component {
     // props: name, selected, onClick

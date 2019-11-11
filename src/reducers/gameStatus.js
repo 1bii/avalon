@@ -5,6 +5,7 @@ const initialState = {
     rejects: 0,
     successCount: 0,
     leaderIndex: 0, // index in playerList
+    lakeGoddess: [],
     selectedTeam: new Set([]),
     gameEnd: false
 }
@@ -28,6 +29,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 leaderIndex: action.index
+            }
+        case actions.addLakeGoddess:
+            return {
+                ...state,
+                lakeGoddess: [...state.lakeGoddess, action.index]
             }
         case actions.selectPlayer:
             newSet = new Set(state.selectedTeam);

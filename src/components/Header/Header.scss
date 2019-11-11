@@ -1,24 +1,18 @@
 @import '../../scss/common.scss';
 
-.App {
-  @include display-flex;
-  @include flex-direction(column);
-  font-family: $medieval;
-  font-size: 20px;
-  margin: 40px;
-  .title-section {
+.title-section {
     @include display-flex;
     @include align-items(center);
     @include justify-content(center);
     margin-bottom: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     border-bottom: 4px solid;
     .app-title {
       text-align: center;
       font-size: 50px;
       font-weight: bold;
     }
-    .fa-home {
+    .fas {
       margin-left: 20px;
       padding: 5px;
       border: 3px solid black;
@@ -29,9 +23,3 @@
       }
     }
   }
-  .page-content {
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-  }
-}

@@ -4,9 +4,9 @@
     @include display-flex;
     @include flex-direction(column);
     @include align-items(center);
+
     .title {
         margin-bottom: 10px;
-        font-size: 30px;
     }
     
     .input-section {

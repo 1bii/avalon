@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import './mission.scss';
-import PlayerLine from '../player-line/player-line';
+import PlayerLine from '../playerLine/playerLine';
 import Vote from './vote';
 import { pageMap, rules } from '../../service/page-service';
 import pageActions from '../../actions/page';
@@ -22,6 +22,14 @@ class Mission extends React.Component {
 
             // for result
             failCount: 0
+        }
+        // random generate leader
+        const randomLeaderIndex = Math.floor(Math.random() * this.props.playerList.length);
+        this.props.dispatch({type: gameActions.setLeader, index: randomLeaderIndex});
+        // set lake goddess
+        if (this.props.preference.lakeGoddess) {
+            this.props.dispatch({type: gameActions.addLakeGoddess,
+                index: (randomLeaderIndex + this.props.playerList.length) % this.props.playerList.length});
         }
     }
 
@@ -58,8 +66,7 @@ class Mission extends React.Component {
     }
 
     getNextLeaderIndex = () => {
-        return this.props.gameStatus.leaderIndex === this.props.playerList.length - 1 ?
-            0 : this.props.gameStatus.leaderIndex + 1
+        return (this.props.gameStatus.leaderIndex + 1) % this.props.playerList.length;
     }
 
     finishRound = async (success) => {
@@ -211,7 +218,8 @@ class Mission extends React.Component {
 const mapStateToProps = (state) => {
     return {
         playerList: state.players.playerList,
-        gameStatus: state.gameStatus
+        gameStatus: state.gameStatus,
+        preference: state.preference
     }
 };
 
