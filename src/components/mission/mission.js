@@ -24,10 +24,12 @@ class Mission extends React.Component {
             failCount: 0
         }
         // random generate leader
-        this.props.dispatch({type: gameActions.setLeader, index: Math.floor(Math.random() * this.props.playerList.length)});
+        const randomLeaderIndex = Math.floor(Math.random() * this.props.playerList.length);
+        this.props.dispatch({type: gameActions.setLeader, index: randomLeaderIndex});
         // set lake goddess
         if (this.props.preference.lakeGoddess) {
-            this.props.dispatch({type: gameActions.addLakeGoddess, index: this.getPrevLeaderIndex()});
+            this.props.dispatch({type: gameActions.addLakeGoddess,
+                index: (randomLeaderIndex + this.props.playerList.length) % this.props.playerList.length});
         }
     }
 
@@ -64,13 +66,7 @@ class Mission extends React.Component {
     }
 
     getNextLeaderIndex = () => {
-        return this.props.gameStatus.leaderIndex === this.props.playerList.length - 1 ?
-            0 : this.props.gameStatus.leaderIndex + 1
-    }
-
-    getPrevLeaderIndex = () => {
-        return this.props.gameStatus.leaderIndex === 0 ?
-            this.props.playerList.length - 1 : this.props.gameStatus.leaderIndex - 1
+        return (this.props.gameStatus.leaderIndex + 1) % this.props.playerList.length;
     }
 
     finishRound = async (success) => {

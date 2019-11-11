@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import './Header.scss';
 import { pageMap } from '../../service/page-service';
 import pageActions from '../../actions/page';
@@ -28,7 +28,6 @@ class Header extends React.Component {
                 {   (this.props.currentPage !== pageMap.playerSetup ||
                     this.props.location.pathname === '/setting') &&
                     <RouterIcon css="fas fa-home" click={this.backToHome} url={'/'}/>
-                    // <i className="fas fa-home" onClick={this.backToHome}></i>
                 }
             </div>
         );
