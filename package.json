@@ -5,7 +5,7 @@
   "homepage": "https://1bii.github.io/avalon",
   "dependencies": {
     "classnames": "^2.2.6",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-cookie": "^4.0.1",
     "react-dom": "^16.8.6",
